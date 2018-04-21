@@ -5,10 +5,10 @@ LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and R
 
 ### What Each Command Should Do
 
-##`node liri.js my-tweets`
+`node liri.js my-tweets`
 This will show your last 20 tweets and when they were created at in your terminal/bash window.
 
-##`node liri.js spotify-this-song '<song name here>'`
+`node liri.js spotify-this-song '<song name here>'`
 
 This will show the following information about the song in your terminal/bash window:  
      * Artist(s)
@@ -17,7 +17,7 @@ This will show the following information about the song in your terminal/bash wi
      * The album that the song is from
       * If no song is provided then your program will default to "The Sign" by Ace of Base.
 
-##`node liri.js movie-this '<movie name here>'`
+`node liri.js movie-this '<movie name here>'`
 
   This will output the following information to your terminal/bash window:
        * Title of the movie.
@@ -30,7 +30,7 @@ This will show the following information about the song in your terminal/bash wi
        * Actors in the movie.
        *If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.
   
-  ##`node liri.js do-what-it-says`
+  `node liri.js do-what-it-says`
        * It should run `spotify-this-song` for "I Want it That Way," as follows the text in `random.txt`.
    
 
