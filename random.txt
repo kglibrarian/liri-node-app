@@ -1,4 +1,2 @@
-{
-    "command": "spotify-this-song",
-    "text": "I Want it That Way"
-}
+spotify-this-song,"I Want it That Way"
+

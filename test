@@ -1,3 +1,5 @@
+//This is JavaScript code that I didn't end up using.
+
 // function spotifyData(parameter) {
 //     console.log(parameter);
 //     for (var i = 3; i < parameter.length; i++){
@@ -66,27 +68,27 @@
    
 // }
 
-// if (userInput === "spotify-this-song") {
-//     prepUserRequest(userRequest);
-//     spotifyData(unitName);
-// };
+// 
 
-// if (userInput === "my-tweets") {
-//    twitterData();
-// };
 
-// if (userInput === "movie-this"){
-//     prepUserRequest(userRequest);
-//     movieData(unitName);
-// }
+// // var request = require('request');
+// var userInput = process.argv[2];
+// var userRequest = process.argv;
+// // var songName = "+The+Sign";
+// // var movieName = "+Mr.+Nobody";
+// var mediaName = userRequest.slice(3).join("+");
+// console.log("Media name is " + mediaName);
+// var unitName = "Thriller";
 
-// if (userInput === "do-what-it-says") {
-//     fs.readFile("./random.txt", 'utf8', function (error, data){
-//        var data = JSON.parse(data);
-//         console.log(data);
-//         userRequest = data.text;
-//         spotifyData(userRequest);
+
+// function prepUserRequest (parameter){
+//     for (var i = 3; i < parameter.length; i++){
+//         console.log(parameter);
         
-//    });
-   
+//             unitName = unitName + "+" + parameter[i];
+//             // console.log(userRequest);
+//             console.log(unitName);
+//             return unitName
+        
+//     }
 // };
