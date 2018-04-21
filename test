@@ -1,0 +1,92 @@
+// function spotifyData(parameter) {
+//     console.log(parameter);
+//     for (var i = 3; i < parameter.length; i++){
+//         console.log(parameter);
+//             if (i > 3 && i < parameter.length ) {
+//                 songName = songName + "+" + parameter[i];
+//                 // console.log(userRequest);
+//                 console.log(songName);
+//             }
+//        }
+//    spotify.search({ type: 'track', query: parameter }, function(err, data) {
+//         if ( err ) {
+//             console.log('Error occurred: ' + err);
+//             return;
+//         } else{
+//             console.log(JSON.stringify(data));
+//             // console.log(data.track);
+//         }
+//     });
+
+// };
+
+// function movieData(parameter) {
+//     for (var i = 3; i < parameter.length; i++){
+//         console.log(parameter);
+//         if (i > 3 && i < parameter.length ) {
+//             movieName = movieName + "+" + parameter[i];
+//             // console.log(userRequest);
+//             console.log(movieName);
+//         }
+//     }    
+//     var params = {
+//         apiKey: 'trilogy',
+//         title: movieName,
+    
+//     }
+//     omdbApi.get(params, function(err, data) {
+//         console.log(data);
+//     });
+// };
+
+// if (userInput === "spotify-this-song") {
+//     prepUserRequest(userRequest);
+//     spotifyData(unitName);
+// };
+
+// if (userInput === "my-tweets") {
+//    twitterData();
+// };
+
+// if (userInput === "movie-this"){
+//     prepUserRequest(userRequest);
+//     movieData(unitName);
+// }
+
+// if (userInput === "do-what-it-says") {
+//     fs.readFile("./random.txt", 'utf8', function (error, data){
+//        var data = JSON.parse(data);
+//         console.log(data);
+//         // var songName = data.text;
+//         // var songName = data.text.split(' ').join('+');
+//         userRequest = data.text;
+//         spotifyData(userRequest);
+        
+//    });
+   
+// }
+
+// if (userInput === "spotify-this-song") {
+//     prepUserRequest(userRequest);
+//     spotifyData(unitName);
+// };
+
+// if (userInput === "my-tweets") {
+//    twitterData();
+// };
+
+// if (userInput === "movie-this"){
+//     prepUserRequest(userRequest);
+//     movieData(unitName);
+// }
+
+// if (userInput === "do-what-it-says") {
+//     fs.readFile("./random.txt", 'utf8', function (error, data){
+//        var data = JSON.parse(data);
+//         console.log(data);
+//         userRequest = data.text;
+//         spotifyData(userRequest);
+        
+//    });
+   
+// };

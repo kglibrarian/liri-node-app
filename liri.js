@@ -1,20 +1,93 @@
 require("dotenv").config();
 var Twitter = require('twitter');
-// var Spotify = require('node-spotify-api');
-// var request = require('request');
+var Spotify = require('node-spotify-api');
+var omdbApi = require('omdb-client');
+var fs = require('fs');
 var keys = require("./keys.js");
-// var spotify = new Spotify(keys.spotify);
+var spotify = new Spotify(keys.spotify);
 var client = new Twitter(keys.twitter);
+// var request = require('request');
+var userInput = process.argv[2];
+var userRequest = process.argv;
+// var songName = "+The+Sign";
+// var movieName = "+Mr.+Nobody";
+var unitName = "Thriller";
 
-var userInput = process.argv[2]
+function prepUserRequest (parameter){
+    for (var i = 3; i < parameter.length; i++){
+        console.log(parameter);
+        if (i > 3 && i < parameter.length ) {
+            unitName = unitName + "+" + parameter[i];
+            // console.log(userRequest);
+            console.log(unitName);
+            return unitName
+        }
+    }
+};
 
-if (userInput === "my-tweets") {
-    client.get('statuses/user_timeline.json?&count=2', function(error, tweets, response) {
-        if(error) throw error;
-        console.log(tweets);  // The favorites. 
-        console.log(response);  // Raw response object. 
-        console.log(JSON.stringify(tweets, null, 2));
+function twitterData () {
+    client.get('statuses/user_timeline', function(error, tweets, response) {
+        for (var i=0; i < 3 ; i++) {
+                if(error) throw error;
+                console.log(tweets[i].created_at);
+                console.log(tweets[i].text); 
+        }; 
     });
+}
+
+
+function spotifyData(parameter) {
+    console.log(parameter);
+    spotify.search({ type: 'track', query: parameter }, function(err, data) {
+        if ( err ) {
+            console.log('Error occurred: ' + err);
+            return;
+        } else{
+            console.log(JSON.stringify(data));
+            // console.log(data.track);
+        }
+    });
+};
+
+function movieData(parameter) {
+    var params = {
+        apiKey: 'trilogy',
+        title: movieName,
+    
+    }
+    omdbApi.get(params, function(err, data) {
+        console.log(data);
+    });
+};
+
+function doData () {
+    fs.readFile("./random.txt", 'utf8', function (error, data){
+        var data = JSON.parse(data);
+        console.log(data);
+        userRequest = data.text;
+        spotifyData(userRequest);
+        
+    });
+};
+
+switch (userInput){
+    case 'spotify-this-song':
+    prepUserRequest(userRequest);
+    spotifyData(unitName);
+    break;
+
+    case 'my-tweets':
+    twitterData();
+    break;
+
+    case 'movie-this':
+    prepUserRequest(userRequest);
+    movieData(unitName);
+    break;
+
+    case 'do-what-it-says':
+    doData();
+
 }
 
 
@@ -22,29 +95,3 @@ if (userInput === "my-tweets") {
 
 
 
-// .then(function(user){
-//     if (user.name === "Karen") {
-//         console.log(" Sorry " + user.name + "." + "That is an incorrect password.")
-//     } else {
-//         console.log("Your pizza size is "  + user.pizzaSize);
-//     }
-// })
-
-// 9. Add the code required to import the `keys.js` file and store it in a variable.
-  
-// * You should then be able to access your keys information like so
-
-//   ```js
-//   var spotify = new Spotify(keys.spotify);
-//   var client = new Twitter(keys.twitter);
-// 
-
-// 10. Make it so liri.js can take in one of the following commands:
-
-//     * `my-tweets`
-
-//     * `spotify-this-song`
-
-//     * `movie-this`
-
-//     * `do-what-it-says`
