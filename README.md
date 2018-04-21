@@ -31,8 +31,10 @@ This will show the following information about the song in your terminal/bash wi
        *If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.
   
   `node liri.js do-what-it-says`
+  
        * It should run `spotify-this-song` for "I Want it That Way," as follows the text in `random.txt`.
    
+
 
 ###What you need to know
 This app is meant to be run in the command line. Please download Visual Studio or other text editor. Download the files from this GitHub repository and open them in a folder in your text editor. You will need install the dependencies (see the package.json file to see what those are) and you'll need to create a JavaScript file called .env that has your twitter and spotify keys in it. 
