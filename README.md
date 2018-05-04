@@ -36,19 +36,19 @@ This will show the following information about the song in your terminal/bash wi
    
 
 
-###What you need to know
+### What you need to know
 
 This app is meant to be run in the command line. Please download Visual Studio or other text editor. Download the files from this GitHub repository and open them in a folder in your text editor. You will need install the dependencies (see the package.json file to see what those are) and you'll need to create a JavaScript file called .env that has your twitter and spotify keys in it. 
 
 Your .env javascript file should look like this, except for your keys replacing the values with your API keys (no quotes) once you have them:
 
 ```js
-# Spotify API keys
+Spotify API keys
 
 SPOTIFY_ID=your-spotify-id
 SPOTIFY_SECRET=your-spotify-secret
 
-# Twitter API keys
+Twitter API keys
 
 TWITTER_CONSUMER_KEY=your-twitter-consumer-key
 TWITTER_CONSUMER_SECRET=your-twitter-consumer-secret
